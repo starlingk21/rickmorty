@@ -3,14 +3,11 @@
 </script>
 
 <template>
-	<div class="characters-container">
+	<div class="characters-container" role="presentation">
 		<CharactersList />
 	</div>
 </template>
 
 <style scoped lang="scss">
-	.characters-container {
-		max-width: 1440px;
-		margin: 64px auto;
-	}
+
 </style>
