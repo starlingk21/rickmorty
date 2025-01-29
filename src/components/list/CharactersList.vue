@@ -24,9 +24,10 @@
 </script>
 
 <template>
-	<CharacterCard :character-data="singleCharacterData" v-if="showCard" />
+	<CharacterCard :character-data="singleCharacterData"
+	               v-if="showCard" @close-view="showCard = false" />
 	
-	<div v-else class="characters-list" role="list">
+	<div v-show="!showCard" class="characters-list" role="list">
 		<CharacterItem
 			v-for="character in charactersList"
 			:key="character.id"
