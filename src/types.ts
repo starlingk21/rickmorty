@@ -29,8 +29,3 @@ export interface Character {
 	type?: string | null | undefined
 	url: string | null
 }
-
-
-
-
-
