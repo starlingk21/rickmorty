@@ -1,5 +1,18 @@
-# Vue 3 + TypeScript + Vite
+# Rick and Morty
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## Project setup (dev env.)
+- `npm i`
+- `npm run dev`
+- `npm run type-check` for type checking in development environment.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+## Packages and other used materials
+- `Vue3`
+- `Typescript`
+- `Vite` - for execution speed and RT inspect
+- `axios` - for REST API execution
+- `sass` - styling inside the vue components
+- `npm-run-all` - to run type-check while the project is in run in dev.
+- `vue-router` - initially was planned to create with router, after discussion agreed to not use this.
+- `date-fns` - formatting the date in char view
+
+### For questions, what I would do differently or add more features - we can discuss this afterwards you check the solution.
