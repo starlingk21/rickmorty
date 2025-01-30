@@ -8,6 +8,7 @@ export default defineConfig(({ command, mode }) => {
     plugins: [
       vue()
     ],
+    base: '/rickmorty/',
     
     resolve: {
       alias: {
