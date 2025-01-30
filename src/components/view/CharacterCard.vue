@@ -13,10 +13,10 @@
 	
 	const formattedDate  = computed(() => format(props.characterData.created, 'yyyy-MM-dd'))
 	
-	const emit = defineEmits('closeChar')
+	const emit = defineEmits(['closeView'])
 	
 	const closeView = () => {
-		emit('closeChar')
+		emit('closeView')
 	}
 </script>
 
@@ -54,7 +54,7 @@
 	</div>
 	
 	<div class="actions">
-		<button class="btn" type="button" @click="closeView">Back</button>
+		<button class="btn" @click="closeView">Back</button>
 	</div>
 </template>
 

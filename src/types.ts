@@ -1,7 +1,7 @@
 export type CharacterInfo = {
 	count: number
 	pages: number | null
-	next: string | null
+	next: string
 	prev: string | null
 }
 
