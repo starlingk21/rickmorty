@@ -1,5 +1,5 @@
 <script setup lang="ts">
-	import {onMounted, ref } from 'vue'
+	import { onBeforeUnmount, onMounted, ref } from 'vue'
 	import CharacterItem from '@/components/list/CharacterItem.vue'
 	import { useCharacters } from '@/composables/useCharacters.ts'
 	import CharacterCard from '@/components/view/CharacterCard.vue'
@@ -9,8 +9,8 @@
 	
 	const RICK_MORTY_API = 'https://rickandmortyapi.com/api/character'
 	
-	const showCard = ref<boolean>(false)
 	const singleCharacterData = ref<Character>()
+	const showCard = ref<boolean>(false)
 	
 	const loadCharacter = (res) => {
 		singleCharacterData.value = res.data
@@ -18,15 +18,32 @@
 		showCard.value = true
 	}
 	
+	const handleScroll = () => {
+		const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight
+		const scrolledFromTop = window.scrollY
+		
+		if (scrollableHeight - scrolledFromTop < 100 && !isLoading.value) {
+			getCharacters(apiInfo.value?.next || '')
+		}
+	}
+	
 	onMounted(() => {
 		getCharacters(RICK_MORTY_API)
+		
+		window.addEventListener('scroll', handleScroll)
+	})
+	
+	onBeforeUnmount(() => {
+		window.removeEventListener('scroll', handleScroll)
 	})
 </script>
 
 <template>
-	<CharacterCard :character-data="singleCharacterData" v-if="showCard" />
+	<CharacterCard :character-data="singleCharacterData"
+	               v-if="showCard"
+	               @close-view="showCard = false" />
 	
-	<div v-else class="characters-list" role="list">
+	<div v-show="!showCard" class="characters-list" role="list">
 		<CharacterItem
 			v-for="character in charactersList"
 			:key="character.id"

@@ -1,6 +1,10 @@
+<script setup lang="ts">
+	import CharactersList from '@/components/list/CharactersList.vue'
+</script>
+
 <template>
 	<div class="main-app">
-		<RouterView />
+		<CharactersList />
 	</div>
 </template>
 

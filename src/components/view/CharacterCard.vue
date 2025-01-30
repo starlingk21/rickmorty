@@ -12,6 +12,12 @@
 	})
 	
 	const formattedDate  = computed(() => format(props.characterData.created, 'yyyy-MM-dd'))
+	
+	const emit = defineEmits(['closeView'])
+	
+	const closeView = () => {
+		emit('closeView')
+	}
 </script>
 
 <template>
@@ -44,8 +50,11 @@
 			<div class="details" role="presentation">
 				<span role="presentation">Created Date: </span>{{ formattedDate }}
 			</div>
-			
 		</div>
+	</div>
+	
+	<div class="actions">
+		<button class="btn" @click="closeView">Back</button>
 	</div>
 </template>
 
@@ -53,6 +62,7 @@
 	.character-view-container {
 		display: flex;
 		gap: 24px;
+		margin-bottom: 24px;
 		
 		.character-image {
 			img {
@@ -78,5 +88,18 @@
 				color: #757575;
 			}
 		}
+	}
+	
+	.actions .btn {
+		padding: 0;
+		border: none;
+		background-color: #fff;
+		
+		font-size: 20px;
+		font-weight: 600;
+		line-height: 26px;
+		text-decoration: underline;
+		
+		cursor: pointer;
 	}
 </style>

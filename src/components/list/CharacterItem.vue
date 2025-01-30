@@ -35,9 +35,9 @@
 		}
 	})
 	
-	const { getCharacters, charactersList } = useCharacters()
+	const { getCharacters, singleCharacter } = useCharacters()
 	
-	const characterData = computed(() => charactersList.value)
+	const characterData = computed(() => singleCharacter.value)
 	
 	const CHARACTER_API = `https://rickandmortyapi.com/api/character/${props.id}`
 	

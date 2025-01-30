@@ -10,10 +10,15 @@ const router = createRouter({
 	history: createWebHistory(import.meta.env.BASE_URL),
 	
 	routes: [
+		// {
+		// 	path: '/',
+		// 	name: 'index',
+		// 	component: () => import('@/views/Index.vue'),
+		// },
 		{
 			path: '/',
 			name: 'index',
-			component: () => import('@/views/Index.vue'),
+			component: () => import('@/components/list/CharactersList.vue'),
 		},
 		{
 			path: '/character/:id',
