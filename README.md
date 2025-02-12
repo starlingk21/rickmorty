@@ -14,5 +14,3 @@
 - `npm-run-all` - to run type-check while the project is in run in dev.
 - `vue-router` - initially was planned to create with router, after discussion agreed to not use this.
 - `date-fns` - formatting the date in char view
-
-### For questions, what I would do differently or add more features - we can discuss this afterwards you check the solution.
