@@ -1,5 +1,7 @@
 # Rick and Morty
 
+Live testing page - https://starlingk21.github.io/rickmorty/
+
 ## Project setup (dev env.)
 - `npm i`
 - `npm run dev`
